@@ -55,7 +55,7 @@ Plug 'tpope/vim-abolish'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 Plug 'drmingdrmer/vim-toggle-quickfix'
-Plug 'dense-analysis/ale'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'nnnoel/ruby-matchit'
 "
 
@@ -234,14 +234,10 @@ if &diff
   colorscheme diffonly
 end
 
-" Only run linters that are specified here
-let g:ale_linters_explicit = 1
-let g:ale_linters = { 'javascript': ['eslint'], 'ruby': ['rubocop'] }
-
-" These options bellow to make sure we only run lint when saving file
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_lint_on_insert_leave = 0
-let g:ale_lint_on_enter = 0
+" snippets & autocompletion using coc
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <Enter> pumvisible() ? coc#_select_confirm() : "\<Enter>"
 
 " Load local directory .vimrc
 set exrc
