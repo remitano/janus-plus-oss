@@ -1,0 +1,34 @@
+#!/usr/bin/env ruby
+
+require "thor"
+
+class ReleaseCLI < Thor
+  desc "prepare", "Prepare the output folder"
+  def hide_dev_identity
+    puts "release#hide_dev_identity"
+    result = print_and_call("git filter-repo \
+                   --email-callback 'return b\"dev@remitano.com\"' \
+                   --name-callback 'return b\"Remitano\"' --force")
+    result.include?("Completely finished after") ? true : false
+  end
+
+  desc "release-to REPO", "Release to REPO"
+  def release_to(repo)
+    ok = hide_dev_identity
+    if ok
+      print_and_call("git push #{repo} HEAD:master -f")
+    else
+      puts "Error while hiding dev identity"
+      exit 1
+    end
+  end
+
+  private
+
+  def print_and_call(cmd)
+    puts cmd
+    `#{cmd}`
+  end
+end
+
+ReleaseCLI.start
