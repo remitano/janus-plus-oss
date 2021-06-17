@@ -93,7 +93,7 @@ end
 
 task :vim_plug do
   sh "vim +PlugInstall +qall"
-  sh "vim -c 'CocInstall -sync coc-json coc-tsserver coc-solargraph' +qall"
+  sh "vim -c 'CocInstall -sync coc-json coc-tsserver coc-solargraph coc-snippets' +qall"
   sh "reset"
 end
 
