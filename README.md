@@ -80,7 +80,7 @@ information.
 To install Janus, please use our [automatic
 installer](https://github.com/carlhuda/janus/blob/master/bootstrap.sh)
 , which backs up any Vim files found in your home folder and installs
-Janus.
+Janus (require nodejs >= 12.12).
 
 ```bash
 $ curl -L https://raw.github.com/remitano/janus-plus-oss/master/bootstrap.rb | ruby
