@@ -30,16 +30,16 @@ missing commit in a submodule, please try running `rake` again before
 submitting an issue.
 
 ## Testing changes without pushing to github
-You can test your new changes to janus-plus without pushing to github,
+You can test your new changes to janus-plus-oss without pushing to github,
 assume that your changes is on master branch of your
-`/path/to/your/local/janus-plus`
+`/path/to/your/local/janus-plus-oss`
 
 ```bash
 cd ~/.vim
 rake
 # you need run "rake" one time to make sure you get the local
 # changes update ability which added recently
-rake local[/path/to/your/local/janus-plus,your_branch]
+rake local[/path/to/your/local/janus-plus-oss,your_branch]
 ```
 
 ## Mailing list
@@ -83,12 +83,12 @@ installer](https://github.com/carlhuda/janus/blob/master/bootstrap.sh)
 Janus.
 
 ```bash
-$ curl -L https://raw.github.com/remitano/janus-plus/master/bootstrap.rb | ruby
+$ curl -L https://raw.github.com/remitano/janus-plus-oss/master/bootstrap.rb | ruby
 ```
 To force an install over existing default janus distribution
 
 ```bash
-$ curl -L https://raw.github.com/remitano/janus-plus/master/bootstrap.rb | FORCED=1 ruby
+$ curl -L https://raw.github.com/remitano/janus-plus-oss/master/bootstrap.rb | FORCED=1 ruby
 ```
 
 ## Customization
@@ -189,7 +189,7 @@ Here're some tips in case you've never used VIM before:
 
 ## Installing Plugins
 
-`remitano/janus-plus` uses [vim-plug](https://github.com/junegunn/vim-plug) to manage plugins.
+`remitano/janus-plus-oss` uses [vim-plug](https://github.com/junegunn/vim-plug) to manage plugins.
 
 Before you can use vim, you need to run `:PlugInstall`. Please reference the vim-plug repo for more info.
 
